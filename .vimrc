@@ -1,10 +1,19 @@
 syntax on
 filetype plugin indent on
-set completeopt=longest,menu
+set backspace=2
+set autoindent
+autocmd FileType h,hpp,cc,c,cpp set shiftwidth=2 | set softtabstop=2 | set tabstop=2 | set cindent shiftwidth=2|
+set expandtab
 
 set number
+set ruler
+set incsearch
 set showmode
 set showcmd
+
+set matchpairs=(:),{:},[:],<:>
+set splitbelow
+set splitright
 
 set encoding=gbk
 set termencoding=gbk
@@ -28,6 +37,11 @@ let Tlist_Exit_OnlyWindow=1
 
 
 let g:winManagerWindowLayout='FileExplorer|TagList'
-nmap wm: WMToggle<cr>
+nmap wm :WMToggle<cr>
 
 :set cscopequickfix=s-,c-,d-,i-,t-,e-
+
+set completeopt=longest,menu
+set cursorline
+hi cursorline cterm=NONE ctermbg=darkred ctermfg=white
+
